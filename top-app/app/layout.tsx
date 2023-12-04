@@ -1,8 +1,15 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Noto_Sans_KR } from 'next/font/google';
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
+const noto_sans_KR = Noto_Sans_KR({
+	variable: '--noto-sans-font',
+	weight: ['300', '400', '500', '700'],
+	style: ['normal'],
+	fallback: ['sans-serif'],
+	subsets: ['cyrillic', 'cyrillic', 'latin', 'latin-ext'],
+	preload: true,
+});
 
 export const metadata: Metadata = {
 	title: 'Create Next App',
@@ -16,7 +23,8 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="ru">
-			<body className={inter.className}>{children}</body>
+			<body className={noto_sans_KR.className}>{children}</body>
 		</html>
+
 	);
 }
