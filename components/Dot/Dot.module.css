@@ -1,5 +1,6 @@
 .dot {
-	padding: 0 6px;
 	width: 5px;
-	background: 50% 50% / 4px 4px no-repeat radial-gradient(var(--gray) 1px, #fff 1px);
+	padding: 0 6px;
+
+	background: 50% 50% / 4px 4px no-repeat radial-gradient(var(--gray) 1px, #FFF 1px);
 }
