@@ -4,7 +4,7 @@ import LikeLogo from '../../public/like.svg';
 
 export const Like = ({ children, ...props }: ILikeProps): JSX.Element => {
 	return (
-		<div {...props}>
+		<div className={styles.likeContainer}{...props}>
 			<p className={styles.counter}>{children}</p>
 			<LikeLogo />
 		</div>
