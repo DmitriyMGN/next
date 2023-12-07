@@ -1,19 +1,20 @@
 :root {
-	--black:#3B434E;
-	--gray-light: #EBEBEB;
-	--white: white;
-	--primary:#7653FC;
-	--primary-hover:#5933EF;
-	--red:#FC836D;
-	--green:#1DC37E;
-	--green-light: #C8F8E4;
-	--font-family: 'Noto Sans KR', sans-serif;
+	--black: #2C2C2C;
+	--gray-black:#4B4B4B;
+	--gray: #6E6E6E;
+
+	--font-family: 'Open Sans', sans-serif;
 }
 
 body {
 	color: var(--black);
 
 	font-family: var(	--font-family);
+}
+
+p, h1, h2, h3 {
+	margin: 0;
+	padding: 0;
 }
 
 
