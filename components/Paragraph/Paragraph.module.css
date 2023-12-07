@@ -1,0 +1,22 @@
+.paragraph {
+	font-style: normal;
+	font-weight: 400;
+}
+
+.s {
+	color: var(--gray);
+	font-size: 14px;
+	line-height: 21px; 
+}
+
+.m {
+	color: var(	--gray-black);
+	font-size: 16px;
+	line-height: 28px; 
+}
+
+.b {
+	color: var(--gray);
+	font-size: 18px;
+	line-height: 32px;
+}
