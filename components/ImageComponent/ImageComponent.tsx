@@ -1,28 +1,21 @@
 import { IImageProps } from './ImageComponent.props';
 import styles from './ImageComponent.module.css';
-import smallWindowImg from '../../public/windowSmall.png';
-import bigWindowImg from '../../public/windowBig.png';
+// import smallWindowImg from '../../public/windowSmall.png';
+// import bigWindowImg from '../../public/windowBig.png';
 import Image from 'next/image';
 
-export const ImageComponent = ({ size = 's' }: IImageProps): JSX.Element => {
+export const ImageComponent = ({ heightPx, widthPx, image }: IImageProps): JSX.Element => {
+	console.log(image);
 	return (
 		<>
-			{size === "s" &&
-				<Image
-					className={styles.imageSmall}
-					src={smallWindowImg}
-					alt="Картинка окна браузера"
-					width={330}
-					height={200}
-				/>}
-			{size === "b" &&
-				<Image
-					src={bigWindowImg}
-					alt="Картинка окна браузера"
-					width={687}
-					height={440}
-				/>
-			}
+			<Image
+				className={styles.imageSmall}
+				src={image}
+				alt="Картинка окна браузера"
+				width={widthPx}
+				height={heightPx}
+				priority={true}
+			/>
 		</>
 
 	);

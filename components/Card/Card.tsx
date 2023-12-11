@@ -2,11 +2,12 @@ import { ImageComponent, Like, Paragraph, Tag, Time, Title, Dot } from '..';
 import Link from 'next/link';
 import styles from './Card.module.css';
 import ArrowImg from '../../public/arrow.svg';
+import smallWindowImg from '../../public/windowSmall.png';
 
 export const Card = (): JSX.Element => {
 	return (
 		<div className={styles.card}>
-			<ImageComponent size='s' />
+			<ImageComponent widthPx={330} heightPx={200} image={smallWindowImg} />
 			<div className={styles.aboutContainer}>
 				<div className={styles.tagContainer}>
 					<Tag>Front-end</Tag>
