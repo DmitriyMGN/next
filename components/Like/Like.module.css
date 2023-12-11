@@ -12,3 +12,20 @@
 .likeContainer {
 	display: flex;
 }
+
+.button {
+	padding: 0;
+	margin: 0;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+}
+
+.activeLogo {
+		fill:#303030;
+}
+
+.activeLogo path {
+		stroke: 
+#FFFFFF;
+}
