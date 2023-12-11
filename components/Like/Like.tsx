@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import { ILikeProps } from './Like.props';
 import styles from './Like.module.css';
