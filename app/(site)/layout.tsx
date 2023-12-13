@@ -23,7 +23,16 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="ru">
-			<body className={noto_sans_KR.className}>{children}</body>
+			<body className={noto_sans_KR.className}>
+				<nav>
+					<ul>
+						<li>Курсы</li>
+						<li>Для детей</li>
+						<li>О нас</li>
+					</ul>
+				</nav>
+				{children}
+			</body>
 		</html>
 
 	);
