@@ -12,10 +12,14 @@
 
 body {
 	color: var(--black);
-
+	margin: 0;
 	font-family: var(	--font-family);
 }
 
+p {
+	margin: 0;
+	padding: 0;
+}
 
 
 
