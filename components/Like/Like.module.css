@@ -14,18 +14,20 @@
 }
 
 .button {
-	padding: 0;
 	margin: 0;
-	background-color: transparent;
-	border: none;
+	padding: 0;
+
 	cursor: pointer;
+
+	border: none;
+	background-color: transparent;
 }
 
 .activeLogo {
-		fill:#303030;
+	fill:#303030;
 }
 
 .activeLogo path {
-		stroke: 
-#FFFFFF;
+	stroke: 
+#FFF;
 }
