@@ -1,0 +1,7 @@
+.headerTitle {
+	color: black;
+	font-family: var(--font-family);
+	font-weight: 300;
+	font-size: 40px;
+	line-height: 54px;
+}

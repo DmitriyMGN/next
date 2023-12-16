@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import { Open_Sans } from 'next/font/google';
 import './globals.css';
-import GithubLogo from '../public/github.svg';
+import styles from './layout.module.css';
+import { Header } from '@/components';
 
 const open_sans = Open_Sans({
 	variable: '--noto-sans-font',
@@ -25,12 +26,11 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="ru">
-			<body className={open_sans.className}>
-				<header className='header'>
-					<span className='header__title'>.my_blog</span>
-					<a href="https://github.com/DmitriyMGN"><GithubLogo /></a>
-				</header>
-				{children}
+			<body className={`${open_sans.className} ${styles.wrapper}`}>
+				<Header className={styles.header} />
+				<main className={styles.main}>
+					{children}
+				</main>
 			</body>
 		</html>
 
