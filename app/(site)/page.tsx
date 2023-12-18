@@ -1,25 +1,30 @@
 // import styles from './page.module.css';
 
-// async function getMenu(firstCategory: number) {
-// 	const res = await fetch('https://courses-top.ru', {
-// 		method: 'POST',
-// 		body: JSON.stringify({
-// 			firstCategory: firstCategory
-// 		}),
-// 		headers: new Headers({ 'content-type': 'application/json' })
-// 	});
-// 	console.log(res.json());
-// 	return res.json();
-// }
+async function getPosts() {
+	const result = fetch('https://jsonplaceholder.typicode.com/posts', {
+		headers: {
+			'Content-Type': 'application/json'
+		}
+	})
+		.then((res) => {
+			if (res.ok) {
+				return res.json();
+			}
+			return Promise.reject(`Ошибка: ${res.status}`);
+		});
+
+	return result;
+
+}
 
 export default async function Home() {
-	// const menu = await getMenu(1);
+	const posts = await getPosts();
 	return (
 		<main>
 			Главная страница
 			<div>
-				{/* <div>{JSON.stringify(menu)}</div>
-				<div>{menu.length}</div> */}
+				<div>{JSON.stringify(posts)}</div>
+				<div>{posts.length}</div>
 			</div>
 		</main>
 	);
