@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Noto_Sans_KR } from 'next/font/google';
 import './globals.css';
+import Link from 'next/link';
 
 const noto_sans_KR = Noto_Sans_KR({
 	variable: '--noto-sans-font',
@@ -26,9 +27,10 @@ export default function RootLayout({
 			<body className={noto_sans_KR.className}>
 				<nav>
 					<ul>
+						<li><Link href={'/'}>Главная</Link></li>
 						<li>Курсы</li>
 						<li>Для детей</li>
-						<li>О нас</li>
+						<li><Link href={'/about'}>О нас</Link></li>
 					</ul>
 				</nav>
 				{children}
