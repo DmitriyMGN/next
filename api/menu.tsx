@@ -1,7 +1,7 @@
 import { MenuItem } from '@/interfaces/menu.interface';
 
 export async function getMenu(firstCategory: number): Promise<MenuItem[]> {
-	const result = fetch('https://courses-top.ru/api/top-page/find', {
+	const result = await fetch('https://courses-top.ru/api/top-page/find', {
 		method: "POST",
 		headers: {
 			'Content-Type': 'application/json'

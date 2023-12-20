@@ -1,6 +1,8 @@
+import { MenuItem } from '@/interfaces/menu.interface';
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
 
 export interface IMenuProps extends DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement> {
-	// children: ReactNode,
+	menu: MenuItem[],
+	firstCategory: number
 	// size?: 'b' | 'm' | 's'
 }
