@@ -1,5 +1,5 @@
 // import styles from './page.module.css';
-import Menu from '@/components/Menu/Menu';
+// import Menu from '@/components/Menu/Menu';
 // import { Button, Htag, P, Tag, Rating } from '@/components';
 // import { useState } from 'react';
 
@@ -19,7 +19,7 @@ export default async function Home() {
 			<Tag size='s' color='gray'>Gray</Tag>
 			<Tag size='b' color='green' href="www.ya.ru">Green</Tag> */}
 			{/* <Rating rating={rating} isEditable={true} setRating={() = console.log(0))} /> */}
-			<Menu />
+			{/* <Menu /> */}
 		</>
 	);
 }
