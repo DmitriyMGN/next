@@ -8,10 +8,19 @@ import cn from 'classnames';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { firstLevelMenu } from '@/helpers/helpers';
+import { logIn, logOut } from '@/lib/features/test-slice';
+import { useAppDispatch, useAppSelector } from '@/lib/hooks';
 
 export default function Menu({ menu, firstCategory, ...props }: IMenuProps) {
 
 	const [menuData, setMenuData] = useState(menu);
+	const username = useAppSelector(((state) => state.authReducer.value.username));
+	console.log(username)
+	const dispatch = useAppDispatch();
+
+	const onClickLogIn = () => {
+		dispatch(logIn("dfsfd"))
+	};
 
 	const openSecondLevel = (secondCategory: string) => {
 		return setMenuData(menu.map(m => {
@@ -27,7 +36,7 @@ export default function Menu({ menu, firstCategory, ...props }: IMenuProps) {
 			<div>
 				{firstLevelMenu.map(m => (
 					<div key={m.route}>
-						<Link href={`/${m.route}`} className={styles.firstLevelLink}>
+						<Link href={`/${m.route}`} className={styles.firstLevelLink} onClick={onClickLogIn}>
 							<div className={cn(styles.firstLevel, {
 								[styles.firstLevelActive]: m.id === firstCategory
 							})} >
