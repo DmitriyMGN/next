@@ -1,11 +1,7 @@
 "use client";
-// import styles from './page.module.css';
-// import { getPage } from '@/api/page';
-
 import { firstLevelMenu } from '@/helpers/helpers';
-// import { Metadata } from 'next';
 import { notFound } from "next/navigation";
-import { setPath, setMenu } from '@/lib/features/server-slice';
+import { setFirstCategory } from '@/lib/features/server-slice';
 import { useAppDispatch } from '@/lib/hooks';
 import { useEffect } from 'react';
 
@@ -22,34 +18,12 @@ export default function PageProducts({ params }: { params: { alias: string, type
 	const firstCategoryItem = firstLevelMenu.find(m => m.route == params.types);
 
 	useEffect(() => {
-		dispatch(setPath(firstCategoryItem !== undefined ? firstCategoryItem.id : null));
-
-		fetch('https://courses-top.ru/api/top-page/find', {
-			method: "POST",
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({
-				'firstCategory': firstCategoryItem !== undefined ? firstCategoryItem.id : 0
-			}),
-		})
-			.then((res) => {
-				if (res.ok) {
-					return res.json();
-				}
-				return Promise.reject(`Ошибка: ${res.status}`);
-			})
-			.then((data) => {
-				setMenuData(data);
-			});
-	}, []);
-
-
+		dispatch(setFirstCategory(firstCategoryItem !== undefined ? firstCategoryItem.id : null));
+	});
 
 	if (!firstCategoryItem) {
 		return notFound();
 	}
-
 
 	return (
 		<div>

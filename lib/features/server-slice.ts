@@ -6,13 +6,13 @@ interface InitialState {
 }
 
 interface IServerState {
-	pathNumber: number | null,
+	firstCategory: number | null,
 	menu: MenuItem[]
 }
 
 const initialState = {
 	value: {
-		pathNumber: null,
+		firstCategory: 0,
 		menu: [],
 	} as IServerState,
 } as InitialState;
@@ -21,10 +21,10 @@ export const server = createSlice({
 	name: "server",
 	initialState,
 	reducers: {
-		setPath: (state, action: PayloadAction<number | null>) => {
+		setFirstCategory: (state, action: PayloadAction<number | null>) => {
 			return {
 				value: {
-					pathNumber: action.payload,
+					firstCategory: action.payload,
 					menu: state.value.menu
 				}
 			};
@@ -32,7 +32,7 @@ export const server = createSlice({
 		setMenu: (state, action: PayloadAction<MenuItem[]>) => {
 			return {
 				value: {
-					pathNumber: state.value.pathNumber,
+					firstCategory: state.value.firstCategory,
 					menu: action.payload
 				}
 			};
@@ -40,5 +40,5 @@ export const server = createSlice({
 	}
 });
 
-export const { setPath, setMenu } = server.actions;
+export const { setFirstCategory, setMenu } = server.actions;
 export default server.reducer;

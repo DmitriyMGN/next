@@ -2,58 +2,47 @@
 
 import { IMenuProps } from './Menu.props';
 import styles from './Menu.module.css';
-import { FirstLevelMenuItem, PageItem } from '@/interfaces/menu.interface';
+import { FirstLevelMenuItem, MenuItem, PageItem } from '@/interfaces/menu.interface';
 import Link from 'next/link';
 import cn from 'classnames';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { firstLevelMenu } from '@/helpers/helpers';
-// import { getMenu } from '@/api/menu';
-// import { useEffect } from 'react';
-// import { logIn, logOut } from '@/lib/features/test-slice';
-// import { useAppDispatch, useAppSelector } from '@/lib/hooks';
+import { useAppSelector, useAppDispatch } from '@/lib/hooks';
+import { setFirstCategory } from '@/lib/features/server-slice';
 
-export default function Menu({ menu, firstCategory, ...props }: IMenuProps) {
+export default function Menu({ ...props }: IMenuProps) {
+	const [menuData, setMenuData] = useState<MenuItem[]>([]);
+	const dispatch = useAppDispatch();
+	const firstCategory = useAppSelector(state => state.serverSlice.value.firstCategory);
 
-	const [menuData, setMenuData] = useState(menu);
-	// const [menuData1, setMenuData1] = useState([]);
+	useEffect(() => {
+		fetch('https://courses-top.ru/api/top-page/find', {
+			method: "POST",
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				'firstCategory': firstCategory
+			}),
+		})
+			.then((res) => {
+				if (res.ok) {
+					return res.json();
+				}
+				return Promise.reject(`Ошибка: ${res.status}`);
+			})
+			.then((data) => {
+				setMenuData(data);
+			});
+	}, [firstCategory]);
 
-	// useEffect(() => {
-	// 	function test() {
-	// 		fetch('https://courses-top.ru/api/top-page/find', {
-	// 			method: "POST",
-	// 			headers: {
-	// 				'Content-Type': 'application/json'
-	// 			},
-	// 			body: JSON.stringify({
-	// 				'firstCategory': firstCategory
-	// 			}),
-	// 		})
-	// 			.then((res) => {
-	// 				if (res.ok) {
-	// 					return res.json();
-	// 				}
-	// 				return Promise.reject(`Ошибка: ${res.status}`);
-	// 			})
-	// 			.then((data) => {
-	// 				setMenuData(data);
-	// 			});
-	// 	}
-	// 	test()
-	// })
-
-	// console.log(menuData1)
-
-	// const username = useAppSelector(((state) => state.authReducer.value.username));
-	// console.log(username)
-	// const dispatch = useAppDispatch();
-
-	// const onClickLogIn = () => {
-	// 	dispatch(logIn("dfsfd"))
-	// };
+	const changeCategoryHandler = (firstCategoryId: number): void => {
+		dispatch(setFirstCategory(firstCategory !== undefined ? firstCategoryId : null));
+	};
 
 	const openSecondLevel = (secondCategory: string) => {
-		return setMenuData(menu.map(m => {
+		return setMenuData(menuData.map(m => {
 			if (m._id.secondCategory === secondCategory) {
 				m.isOpened = !m.isOpened;
 			}
@@ -66,7 +55,7 @@ export default function Menu({ menu, firstCategory, ...props }: IMenuProps) {
 			<div>
 				{firstLevelMenu.map(m => (
 					<div key={m.route}>
-						<Link href={`/${m.route}`} className={styles.firstLevelLink}>
+						<Link href={`/${m.route}`} className={styles.firstLevelLink} onClick={() => changeCategoryHandler(m.id)}>
 							<div className={cn(styles.firstLevel, {
 								[styles.firstLevelActive]: m.id === firstCategory
 							})} >
@@ -85,6 +74,7 @@ export default function Menu({ menu, firstCategory, ...props }: IMenuProps) {
 		return (
 			<div className={styles.secondBlock}>
 				{menuData.map(m => {
+					console.log(m);
 					if (m.pages.map(p => p.alias).includes(usePathname().split('/')[2])) {
 						m.isOpened = true;
 					}

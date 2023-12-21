@@ -1,15 +1,29 @@
-// import styles from './page.module.css';
-import { Metadata } from 'next';
+'use client';
 
-export const metadata: Metadata = {
-	title: 'About'
-};
+import { firstLevelMenu } from '@/helpers/helpers';
+import { notFound } from 'next/navigation';
+import { useAppDispatch } from '@/lib/hooks';
+import { useEffect } from 'react';
+import { setFirstCategory } from '@/lib/features/server-slice';
 
-export default function Types({ params }: { types: string }): JSX.Element {
+// export const metadata: Metadata = {
+// 	title: 'About'
+// };
 
+export default function Types({ params }: { params: { types: string } }): JSX.Element {
+	const categoryItem = firstLevelMenu.find(m => m.route == params.types);
+	const dispatch = useAppDispatch();
+
+	if (!categoryItem) {
+		return notFound();
+	}
+
+	useEffect(() => {
+		dispatch(setFirstCategory(categoryItem !== undefined ? categoryItem.id : null));
+	});
 	return (
 		<div>
-			О нас {params.types}
+			Страничка типа {params.types}
 		</div>
 	);
 }

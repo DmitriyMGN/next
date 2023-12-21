@@ -12,6 +12,9 @@ export async function getPage(alias: string): Promise<TopPageModel> {
 				return res.json();
 			}
 			return Promise.reject(`Ошибка: ${res.status}`);
+		})
+		.then((data) => {
+			return data;
 		});
 
 	return result;
