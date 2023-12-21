@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import authReducer from './features/test-slice';
+import serverSlice from './features/server-slice';
 
 export const makeStore = () => {
 	return configureStore({
 		reducer: {
-			authReducer
+			serverSlice
 		}
 	});
 };

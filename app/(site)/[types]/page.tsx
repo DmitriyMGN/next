@@ -5,11 +5,11 @@ export const metadata: Metadata = {
 	title: 'About'
 };
 
-export default function About(): JSX.Element {
+export default function Types({ params }: { types: string }): JSX.Element {
 
 	return (
 		<div>
-			О нас
+			О нас {params.types}
 		</div>
 	);
 }

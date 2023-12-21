@@ -8,19 +8,49 @@ import cn from 'classnames';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { firstLevelMenu } from '@/helpers/helpers';
-import { logIn, logOut } from '@/lib/features/test-slice';
-import { useAppDispatch, useAppSelector } from '@/lib/hooks';
+// import { getMenu } from '@/api/menu';
+// import { useEffect } from 'react';
+// import { logIn, logOut } from '@/lib/features/test-slice';
+// import { useAppDispatch, useAppSelector } from '@/lib/hooks';
 
 export default function Menu({ menu, firstCategory, ...props }: IMenuProps) {
 
 	const [menuData, setMenuData] = useState(menu);
-	const username = useAppSelector(((state) => state.authReducer.value.username));
-	console.log(username)
-	const dispatch = useAppDispatch();
+	// const [menuData1, setMenuData1] = useState([]);
 
-	const onClickLogIn = () => {
-		dispatch(logIn("dfsfd"))
-	};
+	// useEffect(() => {
+	// 	function test() {
+	// 		fetch('https://courses-top.ru/api/top-page/find', {
+	// 			method: "POST",
+	// 			headers: {
+	// 				'Content-Type': 'application/json'
+	// 			},
+	// 			body: JSON.stringify({
+	// 				'firstCategory': firstCategory
+	// 			}),
+	// 		})
+	// 			.then((res) => {
+	// 				if (res.ok) {
+	// 					return res.json();
+	// 				}
+	// 				return Promise.reject(`Ошибка: ${res.status}`);
+	// 			})
+	// 			.then((data) => {
+	// 				setMenuData(data);
+	// 			});
+	// 	}
+	// 	test()
+	// })
+
+	// console.log(menuData1)
+
+	// const username = useAppSelector(((state) => state.authReducer.value.username));
+	// console.log(username)
+	// const dispatch = useAppDispatch();
+
+	// const onClickLogIn = () => {
+	// 	dispatch(logIn("dfsfd"))
+	// };
 
 	const openSecondLevel = (secondCategory: string) => {
 		return setMenuData(menu.map(m => {
@@ -36,7 +66,7 @@ export default function Menu({ menu, firstCategory, ...props }: IMenuProps) {
 			<div>
 				{firstLevelMenu.map(m => (
 					<div key={m.route}>
-						<Link href={`/${m.route}`} className={styles.firstLevelLink} onClick={onClickLogIn}>
+						<Link href={`/${m.route}`} className={styles.firstLevelLink}>
 							<div className={cn(styles.firstLevel, {
 								[styles.firstLevelActive]: m.id === firstCategory
 							})} >
@@ -88,7 +118,6 @@ export default function Menu({ menu, firstCategory, ...props }: IMenuProps) {
 
 	return (
 		<nav className={styles.menu} {...props}>
-
 			{buildFirstLevel()}
 		</nav>
 	);
