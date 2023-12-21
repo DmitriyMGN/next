@@ -5,7 +5,7 @@ import styles from './ImageComponent.module.css';
 import Image from 'next/image';
 
 export const ImageComponent = ({ heightPx, widthPx, image }: IImageProps): JSX.Element => {
-	console.log(image);
+
 	return (
 		<>
 			<Image

@@ -1,6 +1,6 @@
 import { ImageComponent, Like, Paragraph, Tag, Time, Title, Dot } from '..';
 import Link from 'next/link';
-import styles from './Card.module.css';
+import styles from './Card.module.scss';
 import ArrowImg from '../../public/arrow.svg';
 import smallWindowImg from '../../public/windowSmall.png';
 

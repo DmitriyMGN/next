@@ -6,3 +6,4 @@ export * from './Like/Like';
 export * from './Title/Title';
 export * from './Paragraph/Paragraph';
 export * from './Dot/Dot';
+export * from './Header/Header';
