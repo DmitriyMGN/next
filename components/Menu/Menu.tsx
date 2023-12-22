@@ -33,8 +33,9 @@ export default function Menu({ ...props }: IMenuProps) {
 				return Promise.reject(`Ошибка: ${res.status}`);
 			})
 			.then((data) => {
-				setMenuData(data);
+				return setMenuData(data);
 			});
+
 	}, [firstCategory]);
 
 	const changeCategoryHandler = (firstCategoryId: number): void => {
@@ -74,7 +75,6 @@ export default function Menu({ ...props }: IMenuProps) {
 		return (
 			<div className={styles.secondBlock}>
 				{menuData.map(m => {
-					console.log(m);
 					if (m.pages.map(p => p.alias).includes(usePathname().split('/')[2])) {
 						m.isOpened = true;
 					}

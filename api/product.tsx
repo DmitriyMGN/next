@@ -1,13 +1,13 @@
 import { ProductModel } from '@/interfaces/product.interface';
 
-export async function getProduct(): Promise<ProductModel[]> {
-	const result = fetch("https://courses-top.ru/api/product/find", {
+export async function getProduct(category: string): Promise<ProductModel[]> {
+	const result = await fetch("https://courses-top.ru/api/product/find", {
 		method: "POST",
 		headers: {
 			'Content-Type': 'application/json'
 		},
 		body: JSON.stringify({
-			"category": "Photoshop",
+			"category": category,
 			"limit": 10
 		}),
 	})
@@ -16,6 +16,9 @@ export async function getProduct(): Promise<ProductModel[]> {
 				return res.json();
 			}
 			return Promise.reject(`Ошибка: ${res.status}`);
+		})
+		.then((data) => {
+			return data;
 		});
-	return result;
+	return await result;
 }
