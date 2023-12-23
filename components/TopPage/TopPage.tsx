@@ -1,6 +1,7 @@
-import { Htag, Tag } from '../index';
+import { HHData, Htag, Tag } from '../index';
 import { ITopPage } from './TopPage.props';
 import styles from './TopPage.module.css';
+import { TopLevelCategory } from '@/interfaces/page.interface';
 
 
 export const TopPage = ({ firstCategory, page, products }: ITopPage): JSX.Element => {
@@ -16,8 +17,11 @@ export const TopPage = ({ firstCategory, page, products }: ITopPage): JSX.Elemen
 			</div>
 			<div className={styles.hhTitle}>
 				<Htag tag='h2'>Вакансии - {page.category}</Htag>
-				<Tag color='red' size='s'>hh.ru</Tag>
+				<div className={styles.hhContainer}>
+					<Tag color='red' size='s'>hh.ru</Tag>
+				</div>
 			</div>
+			{firstCategory === TopLevelCategory.Courses && <HHData {...page.hh} />}
 		</div>
 	);
 };

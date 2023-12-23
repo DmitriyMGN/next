@@ -1,6 +1,6 @@
 import { ReactNode, DetailedHTMLProps, HTMLAttributes } from 'react';
 
-export interface PProps extends DetailedHTMLProps<HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement> {
-	children: ReactNode,
-	size?: 'b' | 'm' | 's'
+export interface ICardProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+	color?: 'white' | 'blue';
+	children: ReactNode
 }
