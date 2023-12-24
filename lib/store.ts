@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import serverSlice from './features/server-slice';
+import sortSlice from './features/sort-slice';
 
 export const makeStore = () => {
 	return configureStore({
 		reducer: {
-			serverSlice
+			serverSlice,
+			sortSlice
 		}
 	});
 };

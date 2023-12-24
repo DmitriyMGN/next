@@ -1,14 +1,16 @@
-"use client";
+'use client';
 import { firstLevelMenu } from '@/helpers/helpers';
 import { notFound } from "next/navigation";
 import { setFirstCategory } from '@/lib/features/server-slice';
 import { useAppDispatch } from '@/lib/hooks';
 import { useEffect, useState } from 'react';
-import { TopPage } from '@/components';
+import TopPage from '../../../../components/TopPage/TopPage';
 import { getProduct } from '@/api/product';
 import { ProductModel } from '@/interfaces/product.interface';
 import { TopPageModel } from '@/interfaces/page.interface';
 import { getPage } from '@/api/page';
+import { addProducts } from '@/lib/features/sort-slice';
+
 
 export default function PageProducts({ params }: { params: { alias: string, types: string } }) {
 
@@ -19,10 +21,6 @@ export default function PageProducts({ params }: { params: { alias: string, type
 	const firstCategoryItem = firstLevelMenu.find(m => m.route == params.types);
 
 	useEffect(() => {
-		getProduct(params.alias.charAt(0).toUpperCase() + params.alias.slice(1))
-			.then((data) => {
-				setProduct(data);
-			});
 		getPage(params.alias)
 			.then((data) => {
 				setPage(data);
@@ -33,6 +31,7 @@ export default function PageProducts({ params }: { params: { alias: string, type
 		if (page !== undefined) {
 			getProduct(page.category)
 				.then((data) => {
+					dispatch(addProducts(data));
 					setProduct(data);
 				});
 		}

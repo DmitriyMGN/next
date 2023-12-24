@@ -1,3 +1,4 @@
+// export * from './TopPage/TopPage';
 export * from './Htag/Htag';
 export * from './Button/Button';
 export * from './P/P';
@@ -7,7 +8,7 @@ export * from './Footer/Footer';
 export * from './Header/Header';
 export * from './Sidebar/Sidebar';
 export * from './Menu/Menu';
-export * from './TopPage/TopPage';
 export * from './Card/Card';
 export * from './HHData/HHData';
 export * from './Advantages/Advantages';
+export * from './Sort/Sort';
