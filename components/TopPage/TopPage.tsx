@@ -1,4 +1,4 @@
-import { HHData, Htag, Tag } from '../index';
+import { Advantages, HHData, Htag, P, Tag } from '../index';
 import { ITopPage } from './TopPage.props';
 import styles from './TopPage.module.css';
 import { TopLevelCategory } from '@/interfaces/page.interface';
@@ -21,7 +21,15 @@ export const TopPage = ({ firstCategory, page, products }: ITopPage): JSX.Elemen
 					<Tag color='red' size='s'>hh.ru</Tag>
 				</div>
 			</div>
-			{firstCategory === TopLevelCategory.Courses && <HHData {...page.hh} />}
+			{firstCategory === TopLevelCategory.Courses && page.hh && <HHData {...page.hh} />}
+			{page.advantages && page.advantages.length > 0 &&
+				<>
+					<Htag tag='h2'>Преимущества</Htag>
+					<Advantages advantages={page.advantages} />
+				</>}
+			{page.seoText && <P>{page.seoText}</P>}
+			<Htag tag='h2'>Получаемые навыки</Htag>
+			{page.tags.map(t => <Tag key={t} color='primary' size='b'>{t}</Tag>)}
 		</div>
 	);
 };

@@ -10,3 +10,4 @@ export * from './Menu/Menu';
 export * from './TopPage/TopPage';
 export * from './Card/Card';
 export * from './HHData/HHData';
+export * from './Advantages/Advantages';

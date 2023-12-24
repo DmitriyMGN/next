@@ -12,16 +12,16 @@ export interface TopPageModel {
 	alias: string;
 	title: string;
 	category: string;
-	seoText: string;
+	seoText?: string;
 	tagsTitle: string;
 	metaTitle: string;
 	metaDescription: string;
 	firstCategory: TopLevelCategory;
-	advantages: TopPageAdvantage[];
+	advantages?: TopPageAdvantage[];
 	createdAt: string;
 	updatedAt: string;
 	__v: number;
-	hh: HhData;
+	hh?: HhData;
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	qas?: any[];
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
