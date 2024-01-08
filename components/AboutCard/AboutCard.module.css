@@ -1,0 +1,19 @@
+.aboutCard {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	grid-template-areas: 
+	". title ."
+	". tag .";
+}
+
+.aboutCard__titleContainer {
+	width: 40%;
+	grid-area: title;
+}
+
+.aboutCard__tagContainer {
+	width: 30%;
+	display: flex;
+	align-items: center;
+	grid-area: tag;
+}

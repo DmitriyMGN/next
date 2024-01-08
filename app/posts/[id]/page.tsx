@@ -1,3 +1,6 @@
+import { AboutCard } from '@/components';
+import styles from './page.module.css';
+
 interface ICard {
 	id: number;
 	userId: number;
@@ -34,12 +37,8 @@ export default async function Post({ params }: { params: { id: number } }): Prom
 	const post = await getPost(params.id);
 
 	return (
-		<div>
-			<span>{post.title}</span>
-			<div>
-				<span>{post.body}</span>
-			</div>
-
+		<div className={styles.page}>
+			<AboutCard card={post} />
 		</div>
 	);
 }
