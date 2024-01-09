@@ -1,19 +1,38 @@
-.aboutCard {
-	display: grid;
-	grid-template-columns: auto auto auto;
-	grid-template-areas: 
-	". title ."
-	". tag .";
+.aboutCard__tagContainer {
+	padding: 0 10px;
+	display: flex;
+	align-items: center;
+}
+
+.aboutCard__imageContainer {
+	max-width: 720px;
+	max-height: 440px;
+}
+
+.aboutCard__bodyContainer {
+	padding: 30px 0 20px;
+}
+
+.aboutCard__paragraphContainer {
+	padding: 0 10px;
+}
+
+.aboutCard__likeContainer {
+	padding: 20px 10px 50px;
 }
 
 .aboutCard__titleContainer {
-	width: 40%;
-	grid-area: title;
+	width: 1126px;
 }
 
-.aboutCard__tagContainer {
-	width: 30%;
-	display: flex;
-	align-items: center;
-	grid-area: tag;
+@media screen and (max-width:1160px) {
+.aboutCard__titleContainer {
+	width: 730px;
+}
+}
+
+@media screen and (max-width:760px) {
+.aboutCard__titleContainer {
+	width: 350px;
+}
 }

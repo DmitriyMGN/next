@@ -9,12 +9,13 @@ export const ImageComponent = ({ heightPx, widthPx, image }: IImageProps): JSX.E
 	return (
 		<>
 			<Image
-				className={styles.imageSmall}
+				className={heightPx !== "100%" ? styles.imageSmall : styles.imageBig}
 				src={image}
 				alt="Картинка окна браузера"
-				width={widthPx}
-				height={heightPx}
+				width={0}
+				height={0}
 				priority={true}
+				style={{ width: `${widthPx}`, height: `${heightPx}` }}
 			/>
 		</>
 

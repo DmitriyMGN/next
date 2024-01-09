@@ -9,6 +9,6 @@ export interface IImageProps extends DetailedHTMLProps<ImgHTMLAttributes<HTMLIma
 		src: string,
 		width: number
 	},
-	heightPx: number,
-	widthPx: number,
+	heightPx: string,
+	widthPx: string,
 }

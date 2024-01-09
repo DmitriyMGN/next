@@ -8,7 +8,7 @@ import { ICardProps } from './Card.props';
 export const Card = ({ card }: ICardProps): JSX.Element => {
 	return (
 		<div className={styles.card}>
-			<ImageComponent widthPx={330} heightPx={200} image={smallWindowImg} />
+			<ImageComponent widthPx={"330px"} heightPx={"200px"} image={smallWindowImg} />
 			<div className={styles.aboutContainer}>
 				<div className={styles.tagContainer}>
 					<Tag>Front-end</Tag>
