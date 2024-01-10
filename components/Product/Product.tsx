@@ -5,7 +5,7 @@ import { Button, Card, Divider, Rating, Tag } from '..';
 import { declOfNum, priceRu } from '@/helpers/helpers';
 import Image from 'next/image';
 
-export const Product = ({ className, product, ...props }: IProductProps): JSX.Element => {
+export const Product = ({ product, ...props }: IProductProps): JSX.Element => {
 	return (
 		<Card className={styles.product}>
 			<div className={styles.logo} {...props}>
@@ -15,8 +15,6 @@ export const Product = ({ className, product, ...props }: IProductProps): JSX.El
 					width={70}
 					height={70}
 				/>
-
-				{/* <img src={process.env.NEXT_PUBLIC_DOMAIN + product.image} alt={product.title} /> */}
 			</div>
 			<div className={styles.title}>
 				{product.title}
@@ -71,7 +69,7 @@ export const Product = ({ className, product, ...props }: IProductProps): JSX.El
 
 
 			</div>
-			<Divider className={styles.hr} />
+			<Divider className={cn(styles.hr, styles.hr2)} />
 			<div className={styles.actions}>
 				<Button appearance='primary'>Узнать подробнее</Button>
 				<Button className={styles.reviewButton} appearance='ghost' arrow={'right'}>Читать отзывы</Button>
