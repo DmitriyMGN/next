@@ -6,6 +6,7 @@ import { TopLevelCategory } from '@/interfaces/page.interface';
 import { SortEnum } from '../Sort/Sort.props';
 import { useAppDispatch, useAppSelector } from '@/lib/hooks';
 import { setProduct, setPrice } from '@/lib/features/sort-slice';
+import { Product } from '../index';
 
 const TopPage = ({ firstCategory, page, products }: ITopPage): JSX.Element => {
 	const dispatch = useAppDispatch();
@@ -30,7 +31,7 @@ const TopPage = ({ firstCategory, page, products }: ITopPage): JSX.Element => {
 				<Sort sort={sort} setSort={setSort} />
 			</div>
 			<div>
-				{sortedProducts && sortedProducts.map(p => (<div key={p._id}>{p.title}</div>))}
+				{sortedProducts && sortedProducts.map(p => (<Product key={p._id} product={p} />))}
 			</div>
 			<div className={styles.hhTitle}>
 				<Htag tag='h2'>Вакансии - {page.category}</Htag>

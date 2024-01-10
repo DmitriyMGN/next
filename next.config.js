@@ -1,5 +1,13 @@
 /* eslint-disable no-undef */
 module.exports = {
+	images: {
+        remotePatterns: [
+            {
+                protocol: "https",
+                hostname: "courses-top.ru",
+            },
+        ],
+    },
   webpack(config) {
     const fileLoaderRule = config.module.rules.find((rule) =>
       rule.test?.test?.('.svg'),

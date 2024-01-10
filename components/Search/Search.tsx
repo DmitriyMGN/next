@@ -1,14 +1,15 @@
-'use client';
+"use client";
 
 import { ISearchProps } from './Search.props';
 import styles from './Search.module.css';
 import cn from 'classnames';
-import { Button, Input } from '..';
+import { Button } from '../Button/Button';
+import { Input } from '../Input/Input';
 import { useState, KeyboardEvent } from 'react';
 import GlassIcon from '@/public/glass.svg';
 import { useRouter } from 'next/navigation';
 
-const Search = ({ className, ...props }: ISearchProps): JSX.Element => {
+export const Search = ({ className, ...props }: ISearchProps): JSX.Element => {
 	const [search, setSearch] = useState<string>('');
 	const router = useRouter();
 
@@ -30,7 +31,6 @@ const Search = ({ className, ...props }: ISearchProps): JSX.Element => {
 				value={search}
 				onChange={(e) => setSearch(e.target.value)}
 				onKeyDown={handleKeyDown}
-
 			/>
 			<Button
 				appearance='primary'
@@ -44,4 +44,3 @@ const Search = ({ className, ...props }: ISearchProps): JSX.Element => {
 	);
 };
 
-export default Search;
