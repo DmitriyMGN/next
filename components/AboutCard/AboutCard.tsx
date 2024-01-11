@@ -1,9 +1,10 @@
-import { Dot, ImageComponent, Like, Paragraph, Tag, Title } from '..';
+import { Dot, ImageComponent, Like, Paragraph, Tag, Title, Comment } from '..';
 import styles from './AboutCard.module.css';
 import { IAboutCardProps } from './AboutCard.props';
 import windowBig from '@/public/windowBig.png';
 
-export const AboutCard = ({ card, ...props }: IAboutCardProps): JSX.Element => {
+
+export const AboutCard = ({ card, comments, ...props }: IAboutCardProps): JSX.Element => {
 	return (
 		<div className={styles.aboutCard} {...props}>
 			<div className={styles.aboutCard__titleContainer}>
@@ -39,7 +40,8 @@ export const AboutCard = ({ card, ...props }: IAboutCardProps): JSX.Element => {
 			<div className={styles.aboutCard__likeContainer}>
 				<Like>Понравилось? Жми</Like>
 			</div>
-
+			<Title tag="h2">Комментарии</Title>
+			<Comment comments={comments} />
 		</div>
 	);
 };
