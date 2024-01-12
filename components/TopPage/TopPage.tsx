@@ -6,7 +6,7 @@ import { TopLevelCategory } from '@/interfaces/page.interface';
 import { SortEnum } from '../Sort/Sort.props';
 import { useAppDispatch, useAppSelector } from '@/lib/hooks';
 import { setProduct, setPrice } from '@/lib/features/sort-slice';
-import { Product } from '../index';
+import Product from '../Product/Product';
 
 const TopPage = ({ firstCategory, page, products }: ITopPage): JSX.Element => {
 	const dispatch = useAppDispatch();
