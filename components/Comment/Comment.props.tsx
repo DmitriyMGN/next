@@ -7,5 +7,6 @@ export interface ICommentProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivE
 		name: string;
 		email: string;
 		body: string;
-	}[]
+	}[],
+	cardId: number
 }

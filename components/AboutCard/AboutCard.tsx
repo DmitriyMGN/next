@@ -41,7 +41,7 @@ export const AboutCard = ({ card, comments, ...props }: IAboutCardProps): JSX.El
 				<Like>Понравилось? Жми</Like>
 			</div>
 			<Title tag="h2">Комментарии</Title>
-			<Comment comments={comments} />
+			<Comment comments={comments} cardId={card.id} />
 		</div>
 	);
 };

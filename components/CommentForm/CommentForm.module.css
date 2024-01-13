@@ -23,3 +23,23 @@
 .button:hover {
 	opacity: 0.8;
 }
+
+.panel {
+	padding: 20px;
+	position: relative;
+	border-radius: 5px;
+	margin-top: 20px;
+}
+
+.success {
+	background: rgb(161, 238, 161);
+
+}
+
+.error {
+	background: rgb(231, 102, 102);
+}
+
+.successTitle {
+	font-weight: bold;
+}

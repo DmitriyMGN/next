@@ -11,7 +11,7 @@ interface IComment {
 	body: string;
 }
 
-export const Comment = ({ className, comments, ...props }: ICommentProps): JSX.Element => {
+export const Comment = ({ className, comments, cardId, ...props }: ICommentProps): JSX.Element => {
 
 	return (
 		<div className={className} {...props}>
@@ -27,7 +27,7 @@ export const Comment = ({ className, comments, ...props }: ICommentProps): JSX.E
 					</div>
 				);
 			})}
-			<CommentForm />
+			<CommentForm cardId={cardId} />
 		</div>
 	);
 };
