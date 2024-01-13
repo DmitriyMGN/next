@@ -9,3 +9,5 @@ export * from './Dot/Dot';
 export * from './Header/Header';
 export * from './AboutCard/AboutCard';
 export * from './Comment/Comment';
+export * from './Input/Input';
+export * from './Textarea/Textarea';

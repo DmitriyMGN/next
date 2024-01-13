@@ -1,6 +1,7 @@
 import { Dot } from '..';
 import { ICommentProps } from './Comment.props';
 import styles from './Comment.module.css';
+import CommentForm from '../CommentForm/CommentForm';
 
 interface IComment {
 	postId: number
@@ -26,11 +27,7 @@ export const Comment = ({ className, comments, ...props }: ICommentProps): JSX.E
 					</div>
 				);
 			})}
-			<form className={styles.form} >
-				<input className={styles.input} placeholder='Имя' />
-				<textarea className={styles.textarea} placeholder='Комментарий'></textarea>
-				<button className={styles.button}>Отправить</button>
-			</form>
+			<CommentForm />
 		</div>
 	);
 };

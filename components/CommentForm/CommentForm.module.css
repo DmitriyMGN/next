@@ -1,0 +1,25 @@
+.form {
+	padding: 0 10px;
+	max-width: 634px;
+	width: 100%;
+	margin-bottom: 160px;
+	display: flex;
+	flex-direction: column;
+}
+
+.button {
+	width: 229px;
+	height: 48px;
+	border: none;
+	border-radius: 8px;
+	background-color: #303030;
+	font-weight: bold;
+	font-size: 15px;
+	line-height: 21px;
+	color: white;
+	cursor: pointer;
+}
+
+.button:hover {
+	opacity: 0.8;
+}
