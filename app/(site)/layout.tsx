@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Noto_Sans_KR } from 'next/font/google';
 import './globals.css';
 import styles from './layout.module.css';
-import { Footer, Header, Sidebar } from '@/components';
+import { Footer, Header, Sidebar, Up } from '@/components';
 import StoreProvider from '@/lib/StoreProvider';
 
 const noto_sans_KR = Noto_Sans_KR({
@@ -34,6 +34,7 @@ export default function RootLayout({
 						{children}
 					</main>
 					<Footer className={styles.footer} />
+					<Up />
 				</StoreProvider>
 			</body>
 		</html>
