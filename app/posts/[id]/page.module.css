@@ -1,0 +1,16 @@
+.page {
+	max-width: 1126px;
+	margin: 0 auto;
+}
+
+@media screen and (max-width:1160px) {
+.page {
+	max-width: 730px;
+}
+}
+
+@media screen and (max-width:760px) {
+.page {
+	max-width: 350px;
+}
+}

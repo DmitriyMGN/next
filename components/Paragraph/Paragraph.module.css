@@ -10,6 +10,7 @@
 
 	font-size: 14px;
 	line-height: 21px; 
+
 }
 
 .m {
@@ -24,4 +25,9 @@
 
 	font-size: 18px;
 	line-height: 32px;
+}
+
+.default {
+	margin: 0;
+	padding: 0;
 }

@@ -11,7 +11,7 @@
 .aboutContainer {
 	justify-content: space-between;
 
-	padding: 0 10px 8px;
+	padding: 0 11px 8px;
 	display: flex;
 }
 
@@ -37,6 +37,10 @@
 	font-size: 12px;
 	font-weight: 400px;
 	line-height: 16px;
+}
+
+.paragraphContainer {
+	min-height: 120px;
 }
 
 
