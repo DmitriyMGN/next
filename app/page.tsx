@@ -1,4 +1,5 @@
 import { Card } from '@/components';
+import { AnimateCard } from '@/components/AnimateCard/AnimateCard';
 
 interface ICard {
 	id: number;
@@ -29,7 +30,11 @@ export default async function Home(): Promise<JSX.Element> {
 	return (
 		<>
 			{dataPosts.slice(0, 10).map((post: ICard) => {
-				return <Card key={post.id} card={post} />;
+				return (
+					<AnimateCard>
+						<Card key={post.id} card={post} />
+					</AnimateCard>
+				);
 			})
 			}
 		</>
