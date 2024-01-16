@@ -6,7 +6,7 @@ import cn from 'classnames';
 import { Search } from '..';
 
 
-export const Sidebar = async ({ className, ...props }: ISidebar) => {
+export const Sidebar = ({ className, ...props }: ISidebar) => {
 
 	return (
 		<div className={cn(className, styles.sidebar)} {...props}>

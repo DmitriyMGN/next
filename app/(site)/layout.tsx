@@ -1,9 +1,11 @@
+
 import type { Metadata } from 'next';
 import { Noto_Sans_KR } from 'next/font/google';
 import './globals.css';
 import styles from './layout.module.css';
-import { Footer, Header, Sidebar, Up } from '@/components';
+import { Footer, Sidebar, Up } from '@/components';
 import StoreProvider from '@/lib/StoreProvider';
+import Header from '@/components/Header/Header';
 
 const noto_sans_KR = Noto_Sans_KR({
 	variable: '--noto-sans-font',
