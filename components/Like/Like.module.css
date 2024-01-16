@@ -12,14 +12,16 @@
 .likeContainer {
 	display: flex;
 	align-items: center;
+
 	/* min-height: 16px; */
 }
 
 .button {
-	margin: 0;
-	padding: 0;
 	display: flex;
 	align-items: center;
+
+	margin: 0;
+	padding: 0;
 
 	cursor: pointer;
 

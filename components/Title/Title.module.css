@@ -5,11 +5,13 @@
 }
 
 .h1 {
+	overflow: hidden;
+
+	white-space: nowrap;
+	text-overflow: ellipsis;
+
 	font-size: 34px;
 	line-height: 46px;
-	text-overflow: ellipsis;
-  white-space: nowrap;
-	overflow: hidden;
 }
 
 .h2 {
@@ -18,10 +20,13 @@
 }
 
 .h3 {
+	overflow: hidden;
+
+	width: 90%;
+
+	white-space: nowrap;
+	text-overflow: ellipsis;
+
 	font-size: 18px;
 	line-height: 24px;
-	text-overflow: ellipsis;
-  white-space: nowrap;
-	overflow: hidden;
-	width: 90%;
 }

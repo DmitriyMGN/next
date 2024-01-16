@@ -1,9 +1,11 @@
 .headerTitle {
-	color: black;
-	font-family: var(--font-family);
-	font-weight: 300;
-	font-size: 40px;
-	line-height: 54px;
-	text-decoration: none;
 	cursor: pointer;
+	text-decoration: none;
+
+	color: black;
+
+	font-family: var(--font-family);
+	font-size: 40px;
+	font-weight: 300;
+	line-height: 54px;
 }

@@ -1,79 +1,91 @@
 .userContainer {
-	padding: 0 10px;
 	margin-bottom: 25px;
+	padding: 0 10px;
 }
 
 .user {
 	display: flex;
 	align-items: center;
+
 	margin-bottom: 7px;
 }
 
 .user__name {
-	font-weight: bold;
-	font-size: 12px;
-	line-height: 16px;
 	color: #4B4B4B;
+
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 16px;
 }
 
 .user__email {
-	font-weight: 400;
-	font-size: 12px;
-	line-height: 16px;
 	color: #6E6E6E;
+
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 16px;
 }
 
 .user__comment {
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 28px;
 	color: #4B4B4B;
+
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 28px;
 }
 
 .form {
-	padding: 0 10px;
-	max-width: 634px;
-	width: 100%;
-	margin-bottom: 160px;
 	display: flex;
 	flex-direction: column;
+
+	width: 100%;
+	max-width: 634px;
+	margin-bottom: 160px;
+	padding: 0 10px;
 }
 
 .input {
 	height: 20px;
-	padding: 18px 0 18px 29px;
-	margin-bottom: 15px; 
-	border: 1px solid rgba(40, 40, 40, 0.2);
+	margin-bottom: 15px;
+	padding: 18px 0 18px 29px; 
+
+	border: 1px solid rgb(40 40 40 / 20%);
 	border-radius: 8px;
-	font-weight: 400;
-	font-size: 15px;
-	line-height: 21px;
+
 	font-family: 'Open Sans', sans-serif;
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 21px;
 }
 
 .textarea {
 	height: 68px;
-	padding: 18px 0 18px 29px;
-	margin-bottom: 15px; 
-	border: 1px solid rgba(40, 40, 40, 0.2);
+	margin-bottom: 15px;
+	padding: 18px 0 18px 29px; 
+
+	border: 1px solid rgb(40 40 40 / 20%);
 	border-radius: 8px;
-	font-weight: 400;
-	font-size: 15px;
-	line-height: 21px;
+
 	font-family: 'Open Sans', sans-serif;
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 21px;
 }
 
 .button {
 	width: 229px;
 	height: 48px;
+
+	cursor: pointer;
+
+	color: white;
 	border: none;
 	border-radius: 8px;
 	background-color: #303030;
-	font-weight: bold;
+
 	font-size: 15px;
+	font-weight: bold;
 	line-height: 21px;
-	color: white;
-	cursor: pointer;
 }
 
 .button:hover {

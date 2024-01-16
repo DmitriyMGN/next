@@ -1,8 +1,10 @@
 .dot {
+	display: flex;
+
 	width: 5px;
 	height: 17px;
 	padding: 0 6px;
-	display: flex;
-	justify-items: center;
+
 	background: 50% 50% / 4px 4px no-repeat radial-gradient(var(--gray) 1px, #FFF 1px);
+	justify-items: center;
 }

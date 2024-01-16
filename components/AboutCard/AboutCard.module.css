@@ -1,7 +1,8 @@
 .aboutCard__tagContainer {
-	padding: 0 10px;
 	display: flex;
 	align-items: center;
+
+	padding: 0 10px;
 }
 
 .aboutCard__imageContainer {
@@ -25,14 +26,14 @@
 	width: 1126px;
 }
 
-@media screen and (max-width:1160px) {
-.aboutCard__titleContainer {
-	width: 730px;
-}
+@media screen and (width <=1160px) {
+	.aboutCard__titleContainer {
+		width: 730px;
+	}
 }
 
-@media screen and (max-width:760px) {
-.aboutCard__titleContainer {
-	width: 350px;
-}
+@media screen and (width <=760px) {
+	.aboutCard__titleContainer {
+		width: 350px;
+	}
 }
