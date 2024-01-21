@@ -1,3 +1,4 @@
+import { getPosts } from '@/api/api';
 import { Card } from '@/components';
 
 interface ICard {
@@ -8,21 +9,6 @@ interface ICard {
 }
 
 export default async function Home(): Promise<JSX.Element> {
-
-	const getPosts = async () => {
-		const result = await fetch('https://jsonplaceholder.typicode.com/posts')
-			.then((res) => {
-				if (res.ok) {
-					return res.json();
-				}
-				return Promise.reject(`Ошибка: ${res.status}`);
-			})
-			.then((data) => {
-				return data;
-			});
-
-		return result;
-	};
 
 	const dataPosts = await getPosts();
 

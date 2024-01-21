@@ -1,4 +1,4 @@
-.userContainer {
+.container {
 	padding: 0 10px;
 	margin-bottom: 25px;
 }
@@ -9,21 +9,21 @@
 	margin-bottom: 7px;
 }
 
-.user__name {
+.name {
 	font-weight: bold;
 	font-size: 12px;
 	line-height: 16px;
 	color: #4B4B4B;
 }
 
-.user__email {
+.email {
 	font-weight: 400;
 	font-size: 12px;
 	line-height: 16px;
 	color: #6E6E6E;
 }
 
-.user__comment {
+.comment {
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 28px;

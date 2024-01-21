@@ -1,38 +1,38 @@
-.aboutCard__tagContainer {
+.tagContainer {
 	padding: 0 10px;
 	display: flex;
 	align-items: center;
 }
 
-.aboutCard__imageContainer {
+.imageContainer {
 	max-width: 720px;
 	max-height: 440px;
 }
 
-.aboutCard__bodyContainer {
+.bodyContainer {
 	padding: 30px 0 20px;
 }
 
-.aboutCard__paragraphContainer {
+.paragraphContainer {
 	padding: 0 10px;
 }
 
-.aboutCard__likeContainer {
+.likeContainer {
 	padding: 20px 10px 50px;
 }
 
-.aboutCard__titleContainer {
+.titleContainer {
 	width: 1126px;
 }
 
 @media screen and (max-width:1160px) {
-.aboutCard__titleContainer {
+.titleContainer {
 	width: 730px;
 }
 }
 
 @media screen and (max-width:760px) {
-.aboutCard__titleContainer {
+.titleContainer {
 	width: 350px;
 }
 }
