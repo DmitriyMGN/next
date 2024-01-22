@@ -8,7 +8,7 @@ import { useForm, Controller } from 'react-hook-form';
 import { IReviewForm } from './ReviewForm.interface';
 import { useState } from 'react';
 
-const ReviewForm = ({ productId, className, ...props }: IReviewFormProps): JSX.Element => {
+const ReviewForm = ({ productId, className, isOpened, ...props }: IReviewFormProps): JSX.Element => {
 	const { register, control, handleSubmit, formState: { errors }, reset } = useForm<IReviewForm>();
 	const [isSuccess, setIsSuccess] = useState<boolean>(false);
 	const [error, setError] = useState<string>('');
@@ -45,12 +45,14 @@ const ReviewForm = ({ productId, className, ...props }: IReviewFormProps): JSX.E
 					{...register('name', { required: { value: true, message: "Заполните имя" } })}
 					placeholder='Имя'
 					error={errors.name}
+					tabIndex={isOpened ? 0 : -1}
 				/>
 				<Input
 					{...register('title', { required: { value: true, message: "Заполните заголовок" } })}
 					placeholder='Заголовок отзыва'
 					className={styles.title}
 					error={errors.title}
+					tabIndex={isOpened ? 0 : -1}
 				/>
 				<div className={styles.rating}>
 					<span>Оценка:</span>
@@ -64,6 +66,7 @@ const ReviewForm = ({ productId, className, ...props }: IReviewFormProps): JSX.E
 								ref={field.ref}
 								setRating={field.onChange}
 								error={errors.rating}
+								tabIndex={isOpened ? 0 : -1}
 							/>
 						)}
 					>
@@ -75,9 +78,10 @@ const ReviewForm = ({ productId, className, ...props }: IReviewFormProps): JSX.E
 					placeholder='Текст отзыва'
 					className={styles.description}
 					error={errors.description}
+					tabIndex={isOpened ? 0 : -1}
 				/>
 				<div className={styles.submit}>
-					<Button appearance='primary'>Отправить</Button>
+					<Button appearance='primary' tabIndex={isOpened ? 0 : -1}>Отправить</Button>
 					<span className={styles.info}>* Перед публикацией отзыв пройдет предварительную модерацию и проверку</span>
 				</div>
 			</div>

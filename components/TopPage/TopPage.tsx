@@ -27,7 +27,7 @@ const TopPage = ({ firstCategory, page, products }: ITopPage): JSX.Element => {
 		<div className={styles.wrapper}>
 			<div className={styles.title}>
 				<Htag tag='h1'>{page.title}</Htag>
-				{products && <Tag color='gray' size='s'>{products.length}</Tag>}
+				{products && <Tag color='gray' size='s' aria-label={products.length + 'элементов'}>{products.length}</Tag>}
 				<Sort sort={sort} setSort={setSort} />
 			</div>
 			<div>
