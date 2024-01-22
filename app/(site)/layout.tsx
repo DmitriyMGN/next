@@ -26,6 +26,8 @@ export default function RootLayout({
 }: {
 	children: React.ReactNode
 }) {
+
+
 	return (
 		<html lang="ru">
 			<body className={`${noto_sans_KR.className} ${styles.wrapper}`}>
