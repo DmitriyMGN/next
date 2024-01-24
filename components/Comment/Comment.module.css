@@ -1,91 +1,79 @@
-.userContainer {
-	margin-bottom: 25px;
+.container {
 	padding: 0 10px;
+	margin-bottom: 25px;
 }
 
 .user {
 	display: flex;
 	align-items: center;
-
 	margin-bottom: 7px;
 }
 
-.user__name {
-	color: #4B4B4B;
-
-	font-size: 12px;
+.name {
 	font-weight: bold;
-	line-height: 16px;
-}
-
-.user__email {
-	color: #6E6E6E;
-
 	font-size: 12px;
-	font-weight: 400;
 	line-height: 16px;
+	color: #4B4B4B;
 }
 
-.user__comment {
-	color: #4B4B4B;
-
-	font-size: 16px;
+.email {
 	font-weight: 400;
+	font-size: 12px;
+	line-height: 16px;
+	color: #6E6E6E;
+}
+
+.comment {
+	font-weight: 400;
+	font-size: 16px;
 	line-height: 28px;
+	color: #4B4B4B;
 }
 
 .form {
+	padding: 0 10px;
+	max-width: 634px;
+	width: 100%;
+	margin-bottom: 160px;
 	display: flex;
 	flex-direction: column;
-
-	width: 100%;
-	max-width: 634px;
-	margin-bottom: 160px;
-	padding: 0 10px;
 }
 
 .input {
 	height: 20px;
-	margin-bottom: 15px;
-	padding: 18px 0 18px 29px; 
-
-	border: 1px solid rgb(40 40 40 / 20%);
+	padding: 18px 0 18px 29px;
+	margin-bottom: 15px; 
+	border: 1px solid rgba(40, 40, 40, 0.2);
 	border-radius: 8px;
-
-	font-family: 'Open Sans', sans-serif;
-	font-size: 15px;
 	font-weight: 400;
+	font-size: 15px;
 	line-height: 21px;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .textarea {
 	height: 68px;
-	margin-bottom: 15px;
-	padding: 18px 0 18px 29px; 
-
-	border: 1px solid rgb(40 40 40 / 20%);
+	padding: 18px 0 18px 29px;
+	margin-bottom: 15px; 
+	border: 1px solid rgba(40, 40, 40, 0.2);
 	border-radius: 8px;
-
-	font-family: 'Open Sans', sans-serif;
-	font-size: 15px;
 	font-weight: 400;
+	font-size: 15px;
 	line-height: 21px;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .button {
 	width: 229px;
 	height: 48px;
-
-	cursor: pointer;
-
-	color: white;
 	border: none;
 	border-radius: 8px;
 	background-color: #303030;
-
-	font-size: 15px;
 	font-weight: bold;
+	font-size: 15px;
 	line-height: 21px;
+	color: white;
+	cursor: pointer;
 }
 
 .button:hover {

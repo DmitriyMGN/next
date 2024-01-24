@@ -2,7 +2,7 @@ import { AboutCard } from '@/components';
 import styles from './page.module.css';
 
 interface ICard {
-	id: number;
+	id: string;
 	userId: number;
 	title: string;
 	body: string;

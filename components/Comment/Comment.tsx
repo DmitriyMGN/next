@@ -17,13 +17,13 @@ export const Comment = ({ className, comments, cardId, ...props }: ICommentProps
 		<div className={className} {...props}>
 			{comments.map((comment: IComment) => {
 				return (
-					<div className={styles.userContainer} key={comment.id}>
+					<div className={styles.container} key={comment.id}>
 						<div className={styles.user}>
-							<span className={styles.user__name}>{comment.name}</span>
+							<span className={styles.name}>{comment.name}</span>
 							<Dot />
-							<span className={styles.user__email}>{comment.email}</span>
+							<span className={styles.email}>{comment.email}</span>
 						</div>
-						<p className={styles.user__comment}>{comment.body}</p>
+						<p className={styles.comment}>{comment.body}</p>
 					</div>
 				);
 			})}
@@ -31,4 +31,3 @@ export const Comment = ({ className, comments, cardId, ...props }: ICommentProps
 		</div>
 	);
 };
-
