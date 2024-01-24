@@ -35,7 +35,7 @@ const Product = motion(forwardRef(({ product, className, ...props }: IProductPro
 			behavior: 'smooth',
 			block: 'start'
 		});
-		reviewRef.current?.focus()
+		reviewRef.current?.focus();
 	};
 
 	return (

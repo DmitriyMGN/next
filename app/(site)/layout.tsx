@@ -7,6 +7,7 @@ import { Footer, Sidebar, Up } from '@/components';
 import StoreProvider from '@/lib/StoreProvider';
 import Header from '@/components/Header/Header';
 
+
 const noto_sans_KR = Noto_Sans_KR({
 	variable: '--noto-sans-font',
 	weight: ['300', '400', '500', '700'],

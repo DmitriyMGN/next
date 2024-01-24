@@ -20,6 +20,10 @@ export default function PageProducts({ params }: { params: { alias: string, type
 
 	const firstCategoryItem = firstLevelMenu.find(m => m.route == params.types);
 
+	// if (!firstCategoryItem) {
+	// 	return notFound();
+	// }
+
 	useEffect(() => {
 		getPage(params.alias)
 			.then((data) => {
