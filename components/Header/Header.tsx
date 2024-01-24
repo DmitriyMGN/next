@@ -4,7 +4,7 @@ import styles from './Header.module.css';
 import cn from 'classnames';
 import Logo from '@/public/logo.svg';
 import { ButtonIcon } from '../ButtonIcon/ButtonIcon';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { Sidebar } from '..';
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
@@ -12,6 +12,7 @@ import { usePathname } from 'next/navigation';
 const Header = ({ className, ...props }: IHeader): JSX.Element => {
 	const [isOpened, setIsOpened] = useState<boolean>(false);
 	const pathName = usePathname();
+	const shouldReduceMotion = useReducedMotion();
 
 	useEffect(() => {
 		setIsOpened(false);
@@ -26,7 +27,7 @@ const Header = ({ className, ...props }: IHeader): JSX.Element => {
 			}
 		},
 		closed: {
-			opacity: 0,
+			opacity: shouldReduceMotion ? 1 : 0,
 			x: '100%',
 		}
 	};

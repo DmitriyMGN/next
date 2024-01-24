@@ -38,18 +38,25 @@
 	font-style: normal;
 	font-weight: 300;
 	outline-offset: -1px;
+	background: none;
+	border: none;
+	padding: 0;
 }
 
 .secondBlock {
 	margin-top: 15px;
 	margin-left: 12px;
+	padding: 0;
 	padding-left: 32px;
 
 	border-left: 1px solid #DFDFDF;
+	list-style: none;
 }
 
 .secondLevelBlock {
 	overflow: hidden;
+	padding: 0;
+	list-style: none;
 }
 
 .thirdLevel {
@@ -79,4 +86,9 @@
 .thirdLevelActive,
 .thirdLevel:hover {
 	color: var(--primary);
+}
+
+.firstLevelList {
+	list-style: none;
+	padding: 0;
 }

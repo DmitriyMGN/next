@@ -34,7 +34,7 @@ export default function RootLayout({
 				<StoreProvider>
 					<Header className={styles.header} />
 					<Sidebar className={styles.sidebar} />
-					<main className={styles.body}>
+					<main className={styles.body} role='main'>
 						{children}
 					</main>
 					<Footer className={styles.footer} />

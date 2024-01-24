@@ -10,16 +10,18 @@ import { KeyboardEvent, useEffect, useState } from 'react';
 import { firstLevelMenu } from '@/helpers/helpers';
 import { useAppSelector, useAppDispatch } from '@/lib/hooks';
 import { setFirstCategory } from '@/lib/features/server-slice';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 
 export default function Menu({ ...props }: IMenuProps) {
 	const [menuData, setMenuData] = useState<MenuItem[]>([]);
+	const [announce, setAnnounce] = useState<'closed' | 'opened' | undefined>();
 	const dispatch = useAppDispatch();
 	const firstCategory = useAppSelector(state => state.serverSlice.value.firstCategory);
+	const shouldReduceMotion = useReducedMotion();
 	const variants = {
 		visible: {
 			marginBottom: 20,
-			transition: {
+			transition: shouldReduceMotion ? {} : {
 				when: 'beforeChildren',
 				staggerChildren: 0.1
 			}
@@ -33,7 +35,7 @@ export default function Menu({ ...props }: IMenuProps) {
 			height: 29
 		},
 		hidden: {
-			opacity: 0,
+			opacity: shouldReduceMotion ? 1 : 0,
 			height: 0
 		}
 	};
@@ -67,6 +69,7 @@ export default function Menu({ ...props }: IMenuProps) {
 	const openSecondLevel = (secondCategory: string) => {
 		return setMenuData(menuData.map(m => {
 			if (m._id.secondCategory === secondCategory) {
+				setAnnounce(m.isOpened ? 'closed' : 'opened');
 				m.isOpened = !m.isOpened;
 			}
 			return m;
@@ -82,9 +85,11 @@ export default function Menu({ ...props }: IMenuProps) {
 
 	const buildFirstLevel = () => {
 		return (
-			<div>
+			<ul className={styles.firstLevelList}>
 				{firstLevelMenu.map(m => (
-					<div key={m.route}>
+					<li
+						key={m.route}
+					>
 						<Link href={`/${m.route}`} className={styles.firstLevelLink} onClick={() => changeCategoryHandler(m.id)}>
 							<div className={cn(styles.firstLevel, {
 								[styles.firstLevelActive]: m.id === firstCategory
@@ -94,27 +99,26 @@ export default function Menu({ ...props }: IMenuProps) {
 							</div>
 						</Link>
 						{m.id === firstCategory && buildSecondLevel(m)}
-					</div>
+					</li>
 				))}
-			</div>
+			</ul>
 		);
 	};
 
 	const buildSecondLevel = (menu: FirstLevelMenuItem) => {
 		return (
-			<div className={styles.secondBlock}>
+			<ul className={styles.secondBlock}>
 				{menuData.map(m => {
 					if (m.pages.map(p => p.alias).includes(usePathname().split('/')[2])) {
 						m.isOpened = true;
 					}
 					return (
-						<div key={m._id.secondCategory}>
-							<div className={styles.secondLevel}
-								tabIndex={0}
+						<li key={m._id.secondCategory}>
+							<button className={styles.secondLevel}
 								onKeyDown={(key: KeyboardEvent) => openSecondLevelKey(key, m._id.secondCategory)}
 								onClick={() => openSecondLevel(m._id.secondCategory)}
-							>{m._id.secondCategory}</div>
-							<motion.div
+							>{m._id.secondCategory}</button>
+							<motion.ul
 								layout
 								variants={variants}
 								initial={m.isOpened ? 'visible' : 'hidden'}
@@ -122,22 +126,23 @@ export default function Menu({ ...props }: IMenuProps) {
 								className={cn(styles.secondLevelBlock)}
 							>
 								{buildThirdLevel(m.pages, menu.route, m.isOpened ?? false)}
-							</motion.div>
-						</div>
+							</motion.ul>
+						</li>
 					);
 				})}
-			</div>
+			</ul>
 		);
 	};
 
 	const buildThirdLevel = (pages: PageItem[], route: string, isOpened: boolean) => {
 		return (
 			pages.map(p => (
-				<motion.div
+				<motion.li
 					key={p._id}
 					variants={variantsChildren}
 				>
 					<Link
+						aria-current={`/${route}/${p.alias}` === usePathname() ? 'page' : false}
 						tabIndex={isOpened ? 0 : -1}
 						href={`/${route}/${p.alias}`}
 						className={cn(styles.thirdLevel, {
@@ -146,7 +151,7 @@ export default function Menu({ ...props }: IMenuProps) {
 						{p.category}
 					</Link>
 
-				</motion.div>
+				</motion.li>
 
 			))
 		);
@@ -154,7 +159,8 @@ export default function Menu({ ...props }: IMenuProps) {
 
 
 	return (
-		<nav className={styles.menu} {...props}>
+		<nav className={styles.menu} role='navigation' {...props}>
+			{announce && <span role="log" className='visualyHidden'>{announce == 'opened' ? 'развернуто' : 'свернуто'}</span>}
 			{buildFirstLevel()}
 		</nav>
 	);
