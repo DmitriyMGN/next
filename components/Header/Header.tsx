@@ -1,11 +1,12 @@
 import { IHeaderProps } from './Header.props';
 import styles from './Header.module.css';
 import GithubLogo from '../../public/github.svg';
+import Link from 'next/link';
 
 export const Header = ({ className, ...props }: IHeaderProps): JSX.Element => {
 	return (
 		<header className={className} {...props}>
-			<span className={styles.headerTitle}>.my_blog</span>
+			<Link href="/" className={styles.headerTitle}>.my_blog</Link>
 			<a href="https://github.com/DmitriyMGN"><GithubLogo /></a>
 		</header>
 	);
