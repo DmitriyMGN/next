@@ -7,7 +7,14 @@ export const Header = ({ className, ...props }: IHeaderProps): JSX.Element => {
 	return (
 		<header className={className} {...props}>
 			<Link href="/" className={styles.headerTitle}>.my_blog</Link>
+
+			<a
+				href="https://github.com/DmitriyMGN"
+				aria-label="Ссылка на гитхаб"
+			><GithubLogo /></a>
+
 			<a href="https://github.com/DmitriyMGN"><GithubLogo /></a>
+
 		</header>
 	);
 };

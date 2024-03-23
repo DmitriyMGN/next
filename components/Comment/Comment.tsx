@@ -30,5 +30,9 @@ export const Comment = ({ className, comments, cardId, ...props }: ICommentProps
 			<CommentForm cardId={cardId} />
 		</div>
 	);
+
 };
+
+};
+
 

@@ -9,17 +9,10 @@
 }
 
 .aboutContainer {
-
 	display: flex;
 	justify-content: space-between;
 
 	padding: 0 11px 8px;
-
-	justify-content: space-between;
-
-	padding: 0 11px 8px;
-	display: flex;
-
 }
 
 .tagContainer {

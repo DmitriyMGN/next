@@ -18,7 +18,11 @@ export const Like = ({ children, ...props }: ILikeProps): JSX.Element => {
 	return (
 		<div className={styles.likeContainer}{...props}>
 			<p className={styles.counter}>{children}</p>
-			<button className={styles.button} onClick={buttonLikeHandler}><LikeLogo className={isLike ? styles.activeLogo : ""} /></button>
+			<button
+				className={styles.button}
+				onClick={buttonLikeHandler}
+				aria-label="Кнопка подтверждения лайка"
+			><LikeLogo className={isLike ? styles.activeLogo : ""} /></button>
 		</div>
 	);
 };
