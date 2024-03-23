@@ -12,6 +12,9 @@
 
 	font-size: 34px;
 	line-height: 46px;
+	text-overflow: ellipsis;
+  white-space: nowrap;
+	overflow: hidden;
 }
 
 .h2 {
@@ -29,4 +32,8 @@
 
 	font-size: 18px;
 	line-height: 24px;
+	text-overflow: ellipsis;
+  white-space: nowrap;
+	overflow: hidden;
+	width: 90%;
 }

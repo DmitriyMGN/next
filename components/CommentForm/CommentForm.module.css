@@ -1,4 +1,5 @@
 .form {
+
 	display: flex;
 	flex-direction: column;
 
@@ -6,11 +7,20 @@
 	max-width: 634px;
 	margin-bottom: 160px;
 	padding: 0 10px;
+
+	padding: 0 10px;
+	max-width: 634px;
+	width: 100%;
+	margin-bottom: 160px;
+	display: flex;
+	flex-direction: column;
+
 }
 
 .button {
 	width: 229px;
 	height: 48px;
+
 
 	cursor: pointer;
 
@@ -22,6 +32,16 @@
 	font-size: 15px;
 	font-weight: bold;
 	line-height: 21px;
+
+	border: none;
+	border-radius: 8px;
+	background-color: #303030;
+	font-weight: bold;
+	font-size: 15px;
+	line-height: 21px;
+	color: white;
+	cursor: pointer;
+
 }
 
 .button:hover {
@@ -29,6 +49,7 @@
 }
 
 .panel {
+
 	position: relative;
 
 	margin-top: 20px;
@@ -40,10 +61,24 @@
 .success {
 	background: rgb(161 238 161);
 
+	padding: 20px;
+	position: relative;
+	border-radius: 5px;
+	margin-top: 20px;
+}
+
+.success {
+	background: rgb(161, 238, 161);
+
+
 }
 
 .error {
+
 	background: rgb(231 102 102);
+
+	background: rgb(231, 102, 102);
+
 }
 
 .successTitle {
